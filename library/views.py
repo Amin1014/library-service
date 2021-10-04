@@ -46,10 +46,6 @@ def adminsignup_view(request):
     return render(request,'library/adminsignup.html',{'form':form})
 
 
-
-
-
-
 def studentsignup_view(request):
     form1=forms.StudentUserForm()
     form2=forms.StudentExtraForm()
@@ -196,6 +192,6 @@ def contactus_view(request):
             email = sub.cleaned_data['Email']
             name=sub.cleaned_data['Name']
             message = sub.cleaned_data['Message']
-            send_mail(str(name)+' || '+str(email),message, EMAIL_HOST_USER, ['wapka1503@gmail.com'], fail_silently = False)
+            send_mail(str(name)+' || '+str(email),message, EMAIL_HOST_USER, ['aminabdi570@gmail.com'], fail_silently = False)
             return render(request, 'library/contactussuccess.html')
     return render(request, 'library/contactus.html', {'form':sub})
